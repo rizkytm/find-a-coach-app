@@ -10,7 +10,7 @@
         {{ coach.firstName }}
       </li>
     </ul>
-    <h3 v-else>No coaches found.</h3>
+    <h3 v-else>No coaches found</h3>
   </section>
 </template>
 
