@@ -19,7 +19,8 @@ export default {
     },
     async fetchRequests(context) {
         const coachId = context.rootGetters.userId;
-        const response = await fetch(`https://find-a-coach-app-619ae-default-rtdb.firebaseio.com/requests/${coachId}.json`);
+        const token = context.rootGetters.token;
+        const response = await fetch(`https://find-a-coach-app-619ae-default-rtdb.firebaseio.com/requests/${coachId}.json?auth=` + token);
         const responseData = await response.json();
         if (!response.ok) {
             const error = new Error(responseData.message || 'Failed to fetch request.');
